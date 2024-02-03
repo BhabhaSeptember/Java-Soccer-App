@@ -5,7 +5,6 @@
  */
 package soccer;
 
-
 /**
  *
  * @author Administrator
@@ -16,19 +15,18 @@ public class League {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
         League theLeague = new League();
 
         Team[] theTeams = theLeague.createTeams();
         Game[] theGames = theLeague.createGames(theTeams);
 
-        for (Game currGame: theGames){
+        for (Game currGame : theGames) {
             currGame.playGame();
             System.out.println(currGame.getDescription());
         }
-        
         /* Practice 10-1. Add a call to showBestTeam() method here */
-
+        theLeague.showBestTeam(theTeams);
     }
 
     public Team[] createTeams() {
@@ -60,7 +58,15 @@ public class League {
         Game[] theGames = {theGame, theGame2, theGame3, theGame4};
         return theGames;
     }
-    
-    /* Practice 10-1. Add showBestTeam() method here */
 
+    /* Practice 10-1. Add showBestTeam() method here */
+    public void showBestTeam(Team[] theTeams) {
+        Team currBestTeam = theTeams[0];
+        System.out.println("\nTeam Points");
+        for (Team currTeam : theTeams) {
+            System.out.println(currTeam.getTeamName() + ":" + currTeam.getPointsTotal());
+            currBestTeam = currTeam.getPointsTotal() > currBestTeam.getPointsTotal() ? currTeam : currBestTeam;
+        }
+        System.out.println("Winner of the league is " + currBestTeam.getTeamName());
+    }
 }
