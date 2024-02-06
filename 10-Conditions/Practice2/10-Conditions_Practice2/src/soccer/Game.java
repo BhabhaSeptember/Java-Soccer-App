@@ -48,9 +48,11 @@ public class Game {
             if (currGoal.getTheTeam()== homeTeam) {
                 homeTeamGoals++;
                 /* Practice 10-2. Add code to increment Team.goalsTotal here */
+            homeTeam.incGoalsTotal(1);
             } else {
                 awayTeamGoals++;
                 /* Practice 10-2. Add code to increment Team.goalsTotal here */
+            awayTeam.incGoalsTotal(1);
             }
             
             returnString.append("Goal scored after "
@@ -65,10 +67,10 @@ public class Game {
             homeTeam.incPointsTotal(1);
             awayTeam.incPointsTotal(1);
         } else if (homeTeamGoals > awayTeamGoals) {
-            returnString.append(homeTeam.getTeamName() + " win");
+            returnString.append(homeTeam.getTeamName() + " won!");
             homeTeam.incPointsTotal(2);
         } else {
-            returnString.append(awayTeam.getTeamName() + " win");
+            returnString.append(awayTeam.getTeamName() + " won!");
             awayTeam.incPointsTotal(2);
         }
         returnString.append(" (" + homeTeamGoals + " - " + awayTeamGoals + ") \n");
