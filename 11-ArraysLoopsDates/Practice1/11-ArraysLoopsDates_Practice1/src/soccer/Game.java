@@ -65,10 +65,10 @@ public class Game {
             this.homeTeam.incPointsTotal(1);
             this.awayTeam.incPointsTotal(1);
         } else if (homeTeamGoals > awayTeamGoals) {
-            returnString.append(homeTeam.getTeamName() + " win");
+            returnString.append(homeTeam.getTeamName() + " won!");
             this.homeTeam.incPointsTotal(1);
         } else {
-            returnString.append(awayTeam.getTeamName() + " win");
+            returnString.append(awayTeam.getTeamName() + " won!");
             this.awayTeam.incPointsTotal(1);
         }
         returnString.append(" (" + homeTeamGoals + " - " + awayTeamGoals + ") \n");
