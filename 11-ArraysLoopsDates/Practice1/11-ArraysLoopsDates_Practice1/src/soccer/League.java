@@ -22,7 +22,7 @@ public class League {
 
         League theLeague = new League();
 
-        Team[] theTeams = theLeague.createTeams("The Robins, The Crows, The Swallows", 3);
+        Team[] theTeams = theLeague.createTeams("The Robins, The Crows, The Swallows", 5);
         Game[] theGames = theLeague.createGames(theTeams);
 
         for (Game currGame : theGames) {
